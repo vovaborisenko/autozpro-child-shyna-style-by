@@ -1,0 +1,73 @@
+.status-mark,
+.post-type-shop_order .subsubsub li a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #97a0af;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.status-mark {
+    margin-top: 5px;
+    cursor: default;
+}
+
+.status-mark i {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.post-type-shop_order .subsubsub li a {
+    margin-bottom: 5px;
+}
+
+.post-type-shop_order .subsubsub li a .count,
+.post-type-shop_order .subsubsub li a.current .count {
+    color: inherit;
+}
+
+.order-status > span {
+    margin: 0;
+    padding: 0 5px;
+}
+
+.status-mark_processing,
+.order-status.status-processing,
+.post-type-shop_order .subsubsub .wc-processing a {
+    background-color: #eb5a46;
+    color: #ffffff;
+}
+
+.status-mark_on-hold,
+.order-status.status-on-hold,
+.post-type-shop_order .subsubsub .wc-on-hold a {
+    background-color: #f2d600;
+    color: #ffffff;
+}
+
+.status-mark_cancelled,
+.order-status.status-cancelled,
+.post-type-shop_order .subsubsub .wc-cancelled a {
+    background-color: #0079bf;
+    color: #ffffff;
+}
+
+.status-mark_completed,
+.order-status.status-completed,
+.post-type-shop_order .subsubsub .wc-completed a {
+    background-color: #61bd4f;
+    color: #ffffff;
+}
+
+#adminmenu li a .awaiting-mod,
+#adminmenu li.current a .awaiting-mod {
+    background-color: #eb5a46;
+}
+
+#adminmenu li a .awaiting-mod-on-hold,
+#adminmenu li.current a .awaiting-mod-on-hold {
+    background-color: #f2d600;
+}
