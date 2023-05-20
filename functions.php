@@ -16,6 +16,56 @@ function removeCanonical($link) {
 	return $link;
 }
 
+//hide out of stock
+add_filter('pre_get_posts', 'myshop_show_in_stock', 25);
+
+function myshop_show_in_stock($query) {
+
+    if(
+        !is_admin()
+        && $query->is_main_query()
+        && (is_shop() || is_product_category() || is_product_tag())
+    ) {
+
+        $query->set(
+            'meta_query',
+            array(
+                array(
+                    'key' => '_stock_status',
+                    'value' => 'outofstock',
+                    'compare' => 'NOT IN'
+                )
+            )
+        );
+
+    }
+
+}
+//фильтр на минимальное количество товара
+// Set a minimum number of products requirement before checking out
+/*add_action( 'woocommerce_check_cart_items', 'spyr_set_min_num_products' );
+function spyr_set_min_num_products() {
+	// Only run in the Cart or Checkout pages
+	if( is_cart() || is_checkout() ) {
+		global $woocommerce;
+
+		// Set the minimum number of products before checking out
+		$minimum_num_products = 2;
+		// Get the Cart's total number of products
+		$cart_num_products = WC()->cart->cart_contents_count;
+
+
+		if( $cart_num_products < $minimum_num_products ) {
+			// Display our error message
+	        wc_add_notice( sprintf( '<strong>A Minimum of %s products is required before checking out.</strong>'
+	        	. '<br />Current number of items in the cart: %s.',
+	        	$minimum_num_products,
+	        	$cart_num_products ),
+	        'error' );
+		}
+	}
+}*/
+
 /**
  * Update CSS within in Admin
  */
